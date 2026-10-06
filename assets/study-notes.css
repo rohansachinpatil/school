@@ -671,6 +671,74 @@ button {
   background: rgb(232 226 210 / 42%);
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.photo-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-block: 1.2rem 1.6rem;
+}
+
+.photo-strip--trio {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.photo-card {
+  min-width: 0;
+  margin: 0;
+  padding: 0.5rem;
+  border: 1px dotted var(--rule);
+  background: var(--paper-callout);
+}
+
+.photo-card img {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--rule);
+  background: var(--paper-deep);
+}
+
+.photo-card figcaption {
+  padding-top: 0.45rem;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
+.photo-card figcaption strong {
+  color: var(--blue);
+}
+
+.chapter-hero {
+  margin: 0 0 1.4rem;
+  padding: 0.6rem;
+  border: 1px dotted var(--rule);
+  background: var(--paper-callout);
+}
+
+.chapter-hero img {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--rule);
+}
+
+.chapter-hero figcaption {
+  padding-top: 0.5rem;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+
+.card-thumb {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.7rem;
+  border: 1px solid var(--rule);
+}
+
 .transport-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -936,6 +1004,10 @@ button {
     grid-template-columns: minmax(0, 1fr);
   }
 
+  .photo-strip {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .figure-rail {
     position: static;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -978,8 +1050,18 @@ button {
 
   .hero-grid,
   .shelf-grid,
-  .transport-list {
+  .transport-list,
+  .photo-strip--trio {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .photo-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.6rem;
+  }
+
+  .photo-card figcaption {
+    font-size: 0.78rem;
   }
 
   .hero-aside {
@@ -1093,7 +1175,9 @@ button {
   .rail-note,
   .definition,
   .sentence-pattern,
-  .answer-reveal {
+  .answer-reveal,
+  .photo-card,
+  .chapter-hero {
     break-inside: avoid;
   }
 
